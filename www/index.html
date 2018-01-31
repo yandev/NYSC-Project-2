@@ -111,230 +111,256 @@
 <body>
 
 
+
+ <ons-navigator id="myNavigator" page="signin.html">
+
+    </ons-navigator>
+
+    <!-- Second navigation component: Splitter. This will disappear if the first component changes its content. -->
+    <!-- Third navigation component: Tabbar. This will disappear if the first or second components change their content. -->
+
+    <ons-template id="signin.html">
+
+
+    
  <ons-page id="signinpage">
-  <ons-toolbar>
-    <div class="center"></div>
-    <div class="right">
-      <ons-toolbar-button>
-        <ons-icon icon="ion-navicon, material:md-menu"></ons-icon>
-      </ons-toolbar-button>
-    </div>
+    <ons-toolbar>
+      <div class="center"></div>
+      <div class="right">
+        <ons-toolbar-button>
+          <ons-icon icon="ion-navicon, material:md-menu"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+      
+      
+    </ons-toolbar>
+  
+    
+  
+  
+              <div id="signinboard">
+                  <div id="signinNyscpic">
+                      <div class="visualinfo-inner">
+                          <img src="https://s3-us-west-2.amazonaws.com/newstest-userfiles-mobilehub-1607183395/public/us-west-2%3A04b45db1-9f50-4e39-902d-c6920bfcdf8f/center-universe.jpg" id="newsimage" alt="">
+                      </div>
+                  </div>
+                  <ons-list>
+                      <ons-list-header>Sign In</ons-list-header>
+                      <ons-list-item class="input-items">
+                          <div class="left">
+                              <ons-icon icon="ion-person, md-face" class="list-item__icon"></ons-icon>
+                          </div>
+                          <label class="center">
+                              <ons-input class="txtSignindetailsClass" id="txtStateCode" modifier="underbar" placeholder="State Code..." float></ons-input>
+                          </label>
+                      </ons-list-item>
+  
+                      <ons-list-item class="input-items">
+                          <div class="left">
+                              <ons-icon icon="ion-locked, lock outline" class="list-item__icon"></ons-icon>
+                          </div>
+                          <label class="center">
+                              <ons-input class="txtSignindetailsClass" id="txtPassword" modifier="underbar" type="password" placeholder="Password" float></ons-input>
+                          </label>
+                      </ons-list-item>
+                  </ons-list>
+  
+  
+                  <p class="p-margin-top">
+                      <ons-button modifier="large" id="btnSignin">Sign in</ons-button>
+                  </p>
+  
+  
+  
+  
+  
+                  <p class="p-margin-top">
+                      <span>if you are a new user or you have forgotten your password click here.</span>
+                      <button id="Newuser" class="btn_picture_choice  button--quiet">Get Password</button>
+  
+                  </p>
+  
+  
+                  <div id="signinspinner">
+  
+                      <div id="progress-id">
+                          <svg class="progress-circular progress-circular--material progress-circular--indeterminate">
+                              <circle class="progress-circular__background progress-circular--material__background" />
+                              <circle class="progress-circular__primary progress-circular--material__primary progress-circular--indeterminate__primary" />
+                              <circle class="progress-circular__secondary progress-circular--material__secondary progress-circular--indeterminate__secondary" />
+                          </svg>
+                      </div>
+  
+  
+                  </div>
+              </div>
+  
+  
     
     
-  </ons-toolbar>
-
+  </ons-page>
+  
+  
+  
   
 
+</ons-template>
+  
+  
 
-            <div id="signinboard">
-                <div id="signinNyscpic">
-                    <div class="visualinfo-inner">
-                        <img src="https://s3-us-west-2.amazonaws.com/newstest-userfiles-mobilehub-1607183395/public/us-west-2%3A04b45db1-9f50-4e39-902d-c6920bfcdf8f/center-universe.jpg" id="newsimage" alt="">
-                    </div>
-                </div>
-                <ons-list>
-                    <ons-list-header>Sign In</ons-list-header>
-                    <ons-list-item class="input-items">
-                        <div class="left">
-                            <ons-icon icon="ion-person, md-face" class="list-item__icon"></ons-icon>
-                        </div>
-                        <label class="center">
-                            <ons-input class="txtSignindetailsClass" id="txtStateCode" modifier="underbar" placeholder="State Code..." float></ons-input>
-                        </label>
-                    </ons-list-item>
+  <ons-template id="changetemppass.html">
+    <ons-page id="resetpasswordpage">
 
-                    <ons-list-item class="input-items">
-                        <div class="left">
-                            <ons-icon icon="ion-locked, lock outline" class="list-item__icon"></ons-icon>
-                        </div>
-                        <label class="center">
-                            <ons-input class="txtSignindetailsClass" id="txtPassword" modifier="underbar" type="password" placeholder="Password" float></ons-input>
-                        </label>
-                    </ons-list-item>
-                </ons-list>
+        <ons-toolbar>
+            <div class="left">
 
+                <ons-back-button>Back</ons-back-button>
 
-                <p class="p-margin-top">
-                    <ons-button modifier="large" id="btnSignin">Sign in</ons-button>
-                </p>
-
-
-
-
-
-                <p class="p-margin-top">
-                    <span>if you are a new user or you have forgotten your password click here.</span>
-                    <button id="Newuser" class="btn_picture_choice  button--quiet">Get Password</button>
-
-                </p>
-
-
-                <div id="signinspinner">
-
-                    <div id="progress-id">
-                        <svg class="progress-circular progress-circular--material progress-circular--indeterminate">
-                            <circle class="progress-circular__background progress-circular--material__background" />
-                            <circle class="progress-circular__primary progress-circular--material__primary progress-circular--indeterminate__primary" />
-                            <circle class="progress-circular__secondary progress-circular--material__secondary progress-circular--indeterminate__secondary" />
-                        </svg>
-                    </div>
-
-
-                </div>
             </div>
+            <div class="center">Password Reset</div>
+
+        </ons-toolbar>
+        <ons-card>
+            <div class="p-margin-top" style="text-align: center;  padding:4px;">
+
+                <div class="content">
 
 
-  
-  
-</ons-page>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- <ons-page id="resetpasswordpage">
-       <ons-toolbar>
-                <div class="left">
-
-                    <ons-back-button>Back</ons-back-button>
-
-                </div>
-                <div class="center">Password Reset</div>
-
-            </ons-toolbar>
-            <ons-card>
-                <div class="p-margin-top" style="text-align: center;  padding:4px;">
-
-                    <div class="content">
-
-
-
-                        <ons-list>
-
-                            <ons-list-item class="input-items">
-
-                                <div class="center">
-                                    <input type="text" class="text-input text-input--material txtSignindetailsClass" id="txtstatecode" placeholder="State Code ..." value="">
-                                </div>
-                            </ons-list-item>
-
-
-                        </ons-list>
-
-
-
-                        <p class="p-margin-top">
-                            <ons-button modifier="large" id="btngetresetPasswordcode">Get Code</ons-button>
-
-                        </p>
-                        <div id="signinspinnergetcode">
-
-                            <div id="progress-getcode-id">
-                                <svg class="progress-circular progress-circular--material progress-circular--indeterminate">
-                                    <circle class="progress-circular__background progress-circular--material__background" />
-                                    <circle class="progress-circular__primary progress-circular--material__primary progress-circular--indeterminate__primary" />
-                                    <circle class="progress-circular__secondary progress-circular--material__secondary progress-circular--indeterminate__secondary" />
-                                </svg>
-                            </div>
-
-
-                        </div>
-
-                    </div>
-                </div>
-            </ons-card>
-
-
-
-
-            <ons-template id="Resetpassdialog.html">
-                <ons-dialog id="Resetpass_dialog">
-                    <p class="p-margin-top certer-text">
-
-                        <div id="distination"></div>
-                    </p>
 
                     <ons-list>
 
-
                         <ons-list-item class="input-items">
 
                             <div class="center">
-                                <input type="text" class="text-input text-input--material txtSignindetailsClass" id="txtverificationcode" placeholder="Verification Code ..." value="">
-                            </div>
-                        </ons-list-item>
-
-                        <hr>
-
-                        <ons-list-item class="input-items">
-
-                            <div class="center">
-                                <input type="password" class="text-input text-input--material txtSignindetailsClass" id="txttempPassword" placeholder="New Password ..." value="">
+                                <input type="text" class="text-input text-input--material txtSignindetailsClass" id="txtstatecode" placeholder="State Code ..." value="">
                             </div>
                         </ons-list-item>
 
 
-                        <ons-list-item class="input-items">
-
-                            <div class="center">
-                                <input type="password" class="text-input text-input--material txtSignindetailsClass" id="txtConfirmtempPassword" placeholder="Confirm Password ..." value="">
-                            </div>
-                        </ons-list-item>
-
-
-                        <ons-list-item class="input-items">
-
-                            <div class="center">
-                                <ons-button modifier="large" id="btnchangetempPasswordsubmit">Submit</ons-button>
-                            </div>
-                        </ons-list-item>
-
-                        <ons-list-item class="input-items">
-
-                            <div class="center">
-                                <ons-button modifier="large" id="btnchangetempPasswordCancel">Cancel</ons-button>
-                            </div>
-                        </ons-list-item>
                     </ons-list>
 
-                    <p id="errormsg" class="p-margin-top crimson_text certer-text">
+
+
+                    <p class="p-margin-top">
+                        <ons-button modifier="large" id="btngetresetPasswordcode">Get Code</ons-button>
 
                     </p>
+                    <div id="signinspinnergetcode">
 
-                    <p id="signinspinner-2" class="p-margin-top certer-text">
-                        <ons-icon spin icon="ion-load-a, md-spinner" size="30px" class="green-icon">
-                        </ons-icon>
-                    </p>
-
-
-                    <p id="successmsg" class="p-margin-top certer-text">
-
-                        <ons-icon class="green-icon" icon="ion-checkmark-circled, done" size="20px">
-
-
-                        </ons-icon>
-
-                    </p>
+                        <div id="progress-getcode-id">
+                            <svg class="progress-circular progress-circular--material progress-circular--indeterminate">
+                                <circle class="progress-circular__background progress-circular--material__background" />
+                                <circle class="progress-circular__primary progress-circular--material__primary progress-circular--indeterminate__primary" />
+                                <circle class="progress-circular__secondary progress-circular--material__secondary progress-circular--indeterminate__secondary" />
+                            </svg>
+                        </div>
 
 
+                    </div>
 
-                </ons-dialog>
-            </ons-template>
+                </div>
+            </div>
+        </ons-card>
+
+
+
+
+        <ons-template id="Resetpassdialog.html">
+            <ons-dialog id="Resetpass_dialog">
+                <p class="p-margin-top certer-text">
+
+                    <div id="distination"></div>
+                </p>
+
+                <ons-list>
+
+
+                    <ons-list-item class="input-items">
+
+                        <div class="center">
+                            <input type="text" class="text-input text-input--material txtSignindetailsClass" id="txtverificationcode" placeholder="Verification Code ..." value="">
+                        </div>
+                    </ons-list-item>
+
+                    <hr>
+
+                    <ons-list-item class="input-items">
+
+                        <div class="center">
+                            <input type="password" class="text-input text-input--material txtSignindetailsClass" id="txttempPassword" placeholder="New Password ..." value="">
+                        </div>
+                    </ons-list-item>
+
+
+                    <ons-list-item class="input-items">
+
+                        <div class="center">
+                            <input type="password" class="text-input text-input--material txtSignindetailsClass" id="txtConfirmtempPassword" placeholder="Confirm Password ..." value="">
+                        </div>
+                    </ons-list-item>
+
+
+                    <ons-list-item class="input-items">
+
+                        <div class="center">
+                            <ons-button modifier="large" id="btnchangetempPasswordsubmit">Submit</ons-button>
+                        </div>
+                    </ons-list-item>
+
+                    <ons-list-item class="input-items">
+
+                        <div class="center">
+                            <ons-button modifier="large" id="btnchangetempPasswordCancel">Cancel</ons-button>
+                        </div>
+                    </ons-list-item>
+                </ons-list>
+
+                <p id="errormsg" class="p-margin-top crimson_text certer-text">
+
+                </p>
+
+                <p id="signinspinner-2" class="p-margin-top certer-text">
+                    <ons-icon spin icon="ion-load-a, md-spinner" size="30px" class="green-icon">
+                    </ons-icon>
+                </p>
+
+
+                <p id="successmsg" class="p-margin-top certer-text">
+
+                    <ons-icon class="green-icon" icon="ion-checkmark-circled, done" size="20px">
+
+
+                    </ons-icon>
+
+                </p>
+
+
+
+            </ons-dialog>
+        </ons-template>
+
+
+
+
+    </ons-page>
+</ons-template>
+
+
+
 
 
   
-</ons-page>
+  
+
+
+
+
+
+
+
+
+
+
 
 </body>
 </html>
