@@ -1,0 +1,164 @@
+
+#signinNyscpic{
+     
+        width: 100%;
+    max-width: 300px;
+    height: 300px;
+        background-size: contain;
+    background-repeat: no-repeat;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+    .txtSignindetailsClass{width: 90%;
+    max-width: 500px;}
+
+
+    #signinspinner{
+        display:none;
+
+      
+    }
+   
+    #progress-id{text-align: center;}
+ 
+    .certer-text{text-align: center}
+#signinspinner-2{
+        display:none;
+      
+    }
+ 
+    #signinspinnergetcode{
+        display: none;
+        text-align: center;
+    }
+                #signinboard{
+                    
+    max-width: 500px;
+    margin: 30px auto;
+    border: 1px solid #eee;
+    border-radius: 19px;
+                }
+    .p-margin-top{
+              margin-top: 30px;
+    }
+            
+    #errormsg{
+        display:none;
+      
+    }
+    #btnchangetempPasswordsubmit{
+        
+    }
+    .green-icon{
+        color: green
+
+    }
+    .spinner-icons-centered{
+            text-align: center;
+    }
+    #successmsg{
+        display:none;
+      
+    }
+    .make-disappear{
+            display:none;
+    }
+        #popover-dialog{height: 250px;
+    width: 210px;}
+
+
+        #newsimage{width: 100%;
+    max-width: 500px;
+    padding: 3px;}
+
+    .news-number-title{
+        text-align: center;
+        font-size: 100%;
+        font-weight: 700;
+    }
+  
+        .inbox-toolbar{
+            
+        }
+        .list-item__thumbnail{
+            border-radius: 50%;
+        }
+    
+     
+        .after-list {
+        margin: 20px;
+        text-align: center;
+      }
+.crimson_text{
+		   color:crimson}
+      .text_center{
+text-align: center;
+}
+.padd_10{
+ padding: 10px;
+}
+.News-top-bottons{
+    color: #fff;
+}
+.cm_items{
+        border-top: 1px gray;
+        border-bottom:  1px gray;
+    }
+     
+
+    /*
+    css for sliders 
+    */
+ .imageclass{
+    max-width: 550px;
+    width: auto;
+    height: auto;
+    max-height: 100%;
+}
+
+.video_event_display{
+       width: 98%;
+       max-width: 550px;
+       height: auto;
+}
+ 
+.swiper-container {
+      width: 100%;
+      height: 100%;
+    }
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      /*   background-image: url("../images/nysc.jpg");
+      Center slide text vertically */
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+    }
+
+/* 
+end of slider css
+*/
+ /* this is year book ;*/
+ .yearbook-info{
+	font-size: 15px;
+}
+#progress-id-yearbook{
+    
+    text-align: center;
+    position: fixed;
+    top: 45%;
+    left: 46%;
+}

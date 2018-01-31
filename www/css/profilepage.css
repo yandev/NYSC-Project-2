@@ -1,0 +1,224 @@
+.profile_display_container{
+        text-align: center;
+    height: auto;
+    width: 100%;
+    min-width: 200px;
+}
+.profile_display{
+
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border: 1px solid #afafaf;
+    border-radius: 10%;
+    padding: 2px 3px;
+    margin: 4px 0 2px 0;
+
+}
+
+.profile_details{
+        font-family: Roboto,Noto,sans-serif;
+       font-size: 20px;
+    font-weight: 600;
+    line-height: 2;
+    margin: .6em 0;
+    padding: 0;
+}
+.edit_class{
+    border-left: 1px solid gray;
+}
+
+.edit_icon_class{
+        padding: 1px 2px;
+}
+    .item_list{
+        padding: 1px;
+        margin:2px auto;
+        border-bottom: 1px solid gray;
+    }
+#Aboutme {
+    text-align: center;
+    height: 30px;
+    border: 1px solid #ddd;
+    border-radius: 5px 5px;
+}
+
+
+.Wall_containers{
+min-width: 300px;
+        max-width: 600px;
+    width: auto;
+    height: auto;
+    margin: 2px auto 25px auto;
+    border: .5px solid #ddd;
+    border-radius: 5px 5px;
+    padding: 1px 3px;
+}
+.img_wall_pic{
+    width:100%;
+    margin: 1px 1px;
+}
+.wall_title{
+    text-align: center;
+}
+
+.add_update{
+        width: 98%;
+        min-width: 280px;
+        max-width: 500px;
+            margin: 8px auto;
+        border:1px solid gray;
+}
+    .textarea_container{
+        margin:2px auto;
+        padding:3px;
+    }
+    textarea{
+        width: 98%;
+        padding: 3px;
+         font-family: Roboto,Noto,sans-serif;
+      color: rgba(0, 0, 0, 0.78);
+    font-size: 17px;
+    border: 1px solid rgba(0, 150, 136, 0.29);
+    border-radius: 8px 8px;
+   
+    }
+        .icon_camera{
+            width:30px;
+            height: 30px;
+        }
+        .btn_media{
+            text-align: center;
+        }
+        .btn_fab{
+            margin:0 10px;
+        }
+        .uploaded{
+            width: 100px;
+            height: 100px;
+            border:1px solid;
+            border-radius: 5px;
+        }
+        .time_of_event_display{
+font-size: 12px;
+    float: right;
+        }
+
+#btn_change_password{
+    width:98%;
+}
+.text-input{
+    width:100%;
+    height: 20px;
+     opacity: 1;
+    color: black;
+    font-size: 18px;
+    font-weight: 600;
+}
+.switch_class_edit{
+    margin: 0 20px;
+}
+.switch_block{
+    width: 100%;
+}
+.textarea_css:disabled{
+    width: 100%;
+     color: black;
+}
+.text-input:disabled {
+ opacity: 1;
+    color: black;
+    font-size: 18px;
+    font-weight: 600;
+}
+.textarea--transparent:disabled {
+    opacity: 1;
+    cursor: default;
+    pointer-events: none;
+}
+.card{
+   color: rgba(0, 0, 0, 0.78);
+}
+.toast{
+    position: fixed;
+    width: 90%;
+}
+#change_pass_errormsg{
+    display:none;
+}
+#change_pass_signinspinner-2{
+    display:none;
+}
+#change_pass_successmsg{
+    display:none;
+}
+.change_password_dialog_btn{
+    width: 40%;
+}
+#AboutME {
+    width: 100%;
+    font-family: Roboto,Noto,sans-serif;
+    color: #1e1e1e;
+    text-align: left;
+    font-size: 13px;
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 8px 8px;
+}
+
+#btn_Post_event{
+    border: 1px solid rgba(0, 150, 136, 0.36);
+    border-radius: 5px 5px;
+    width: 97%;
+    margin: 5px;
+}
+.btn_picture_choice{
+    margin:5px auto;
+    text-align: center;
+    
+}
+.camera_option_title{
+
+    margin: 3px auto;
+    font-family: Roboto,Noto,sans-serif;
+    font-size: 20px;
+    
+
+}
+.btn_del_profile_events{
+     border: 1px solid rgba(0, 150, 136, 0.36);
+    border-radius: 5px 5px;
+}
+  
+  #CAMERA{
+        
+  }
+   #PHOTOLIBRARY{
+        float:right;    
+   }
+#camera_option_cancel_btn{
+    width: 100%;
+    margin: 5px auto;
+}
+.events{
+    margin-bottom: 3px;
+    border-bottom: 1px solid #afafaf;
+}
+.loading_progress{
+    height: 5px;
+}
+.progress-bar__secondary {
+    background-color: rgba(0, 150, 136, 0.51);
+    
+}
+.progress-bar--indeterminate:after, .progress-bar--indeterminate:before {
+   
+    background-color: #009688;
+ 
+}
+.swiper-container_profile{
+    width:100%;
+    height:100%;
+}
+.swiper-pagination_profile{
+    text-align:center;
+}

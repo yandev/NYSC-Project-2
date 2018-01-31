@@ -1,0 +1,40 @@
+
+#choose_year{
+	color: #fff;
+}
+			.free-wall {
+				margin: 15px;
+			}
+			.brick {
+				width: 221.2px;
+			}
+			.info {
+				padding: 15px;
+				color: #333;
+			}
+			.brick img {
+				margin: 0px;
+				padding: 0px;
+				display: block;
+			}
+			.btn-viewwall{
+				width: 100%
+			}
+			.btn-more-state{
+				width: 100%;
+				margin:1px auto;
+			}
+
+			.border_bottom{
+				margin: 0px 0 4px 0;
+    border-bottom: 1px solid #ddd;
+			}
+			.yearbook-items-list{
+				font-size: 14px;
+				font-weight: 600;
+			}
+			.yearbook-items-values{
+				opacity: 1;
+				font-size: 12px;
+				font-weight: 600;
+			}

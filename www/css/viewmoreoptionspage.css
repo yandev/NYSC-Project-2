@@ -1,0 +1,65 @@
+.search_bar{
+    width:98%;
+        margin-top: 5px;
+}
+
+.select-input{
+    height: 30px;
+    width: 100%;
+    margin: 1px auto;
+    border: 1px solid rgba(0, 150, 136, 0.35);
+    border-radius: 5px;
+}
+.State_choice_batch_choice{
+    width: 45%;
+    min-width: 150px;
+    max-width: 45%;
+    display: inline-block;
+    margin: 3px 4px 4px 10px; 
+}
+
+
+.yeardiv{
+    text-align: center;
+    height: 100%;
+}
+.removepadding{padding: 0px 0px 0px 0;}
+.State_batch_div{
+    width: 98%;
+    max-width: 600px;
+    margin: 10px auto;
+
+}
+#message_from_s3{
+    color: red;
+    text-align: center;
+}
+
+  #goback{
+min-width: 70px;
+    border-right: 1px solid #ddd;
+  }  
+#goforward{
+min-width: 70px;
+    border-left: 1px solid #ddd;
+  }  
+#btn_right{
+    text-align: right;
+    position: relative;
+    left: 100%;
+}
+    #loading_progress_from__yearbook{
+        display: none;
+    }
+    #errormess_no_data_avail{
+        display: none;
+    }
+    .center-text-year{
+        text-align: center;
+        font-weight: 800;
+    }
+    .addredborder{
+        
+            border: 1px solid red;
+        
+    }

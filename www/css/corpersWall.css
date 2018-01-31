@@ -1,0 +1,48 @@
+.media{
+    margin:3px 5px;
+    width:100%;
+    min-width:300px;
+    max-width:500px;
+}
+
+.comment{
+        border: 1px solid #ddd;;
+    padding: 2px;
+    margin: 4px auto;
+    border-radius: 5px;
+}
+
+.card__content_corpers_comment_textarea{
+    border: 1px solid rgba(0, 150, 136, 0.42);
+    box-shadow: 0 1px 2px rgba(0, 150, 136, 0.42);
+    width: 98%;
+    font-family: Roboto,Noto,sans-serif;
+    color: rgba(0, 0, 0, 0.78);
+    
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 8px 8px;
+
+}
+
+.Wall_containers_corpers_page {
+    min-width: 300px;
+    max-width: 600px;
+    width: auto;
+    height: auto;
+    margin: 40px auto 25px auto;
+    border: .5px solid #ddd;
+    border-radius: 5px 5px;
+    padding: 1px 3px;
+}
+
+.cprperspage_events{
+
+  border-bottom: 1px solid #ddd;
+    border-radius: 5px 5px;
+    margin-bottom: 10px;
+}
+.commenters_name{
+     font-size: 10px;
+    color: rgba(18, 18, 22, 0.95);
+
+}
