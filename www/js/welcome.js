@@ -44,10 +44,9 @@
      var scrollevent;
      var newspageend = false;
      var ViewMoreoptionspageend = false;
-     var corperwallpageend = false;
+     var corperwallpageend = false;open
      var camera_dialog;
      var pictures = [];
-     
      var picture_index = 0;
 
      var fullstatename = "";
@@ -56,32 +55,31 @@
     var data_skip_yearbook = 0;
     var data_skip_cmwall = 0;
     //var user_pool_id = 'us-west-2_TLjDm1fS9';
-     //var Client_Id  = '3jthg266kfff40ibhj4juaf3jl';us-east-1_NNYGO9I8N 1gk071ek18funlseh67a1rdjhg
+     //var Client_Id  = '3jthg266kfff40ibhj4juaf3jl';
     var user_pool_id = 'us-east-1_NNYGO9I8N';
     var Client_Id = '1gk071ek18funlseh67a1rdjhg';
-    var BucketName;
-    var s3;
+    var bucket;
     var MD5;
      // var bucketname = "newstest-userfiles-mobilehub-1607183395";
-   // nyscapp - userfiles - mobilehub - 145406771
-    var bucketname;// = "nyscapp-userfiles-mobilehub-145406771";
-     document.addEventListener('deviceready', onDeviceReady.bind(this), false);
+    var bucketname = "nyscapp-userfiles-mobilehub-1454067712";
+  //   document.addEventListener('deviceready', onDeviceReady.bind(this), false);
 
   
-
-     function onDeviceReady() {
-
-         //alert(cordova.file); alert(navigator.camera)
-          bucketname = new AWS.S3({ params: { Bucket: "newstest-userfiles-mobilehub-1607183395" } });
-        document.getElementById("btnSignin").addEventListener('click', Signincliick);
+ ons.ready(function() {
+   
+            //alert(cordova.file);
+         
+    
         
     //    document.getElementById("btnSignin2").addEventListener('click', Signincliick2);
-         
+        
     checksesssion();
        //  document.addEventListener("scroll", ScrollLoadmore);
     // document.querySelector.bind(document);
 
  
+  
+      
 
   
 /* this is the end of device ready function *************************
@@ -119,7 +117,10 @@
 
 
 
-
+        
+        
+        
+        
 
 
 
@@ -150,17 +151,28 @@ $('.page__content').on('scroll', scrollevent);
                
                 console.log(" the init ")
                 document.getElementById("btnSignin").addEventListener('click', Signincliick);
+                document.getElementById("Logout").addEventListener('click', Logout);
+
+
+
+
+                var GetPassword = function () {
+
+
+                    document.querySelector('#myNavigator').pushPage('changetemppass.html');
+
+
+                }
+
+                document.getElementById('Newuser').addEventListener('click', GetPassword);
+
+
+
             
-             }else if (event.target.matches('#signinpage2')){
-                
-                 console.log(" the init 2")
-                 document.getElementById("btnSignin2").addEventListener('click', Signincliick2);
-             
-              }
-              else if (event.target.matches('#newspage')) {
+             }else if (event.target.matches('#newspage')) {
                   
 
-
+                  
 
 //$(window).scroll();
                    //  document.addEventListener("scroll", ScrollLoadmore);
@@ -168,7 +180,7 @@ $('.page__content').on('scroll', scrollevent);
                         
                         newspageend = false;
                                               $('#thatsall-id').fadeOut();
-               /*     AWS.config.credentials.refresh((error) => {
+                 AWS.config.credentials.refresh((error) => {
 
 
 
@@ -192,7 +204,7 @@ $('.page__content').on('scroll', scrollevent);
                              DurationSeconds: 3600,
 
                          };
-                         
+                         */
                      
                        
 
@@ -219,7 +231,7 @@ $('.page__content').on('scroll', scrollevent);
 
                          //console.log(GetSortKey(AWS.config.credentials.params.IdentityId));
 
-                       
+                         /* 
       
       
                 
@@ -304,10 +316,10 @@ $('.page__content').on('scroll', scrollevent);
                     console.log("File uploaded successfully.");
                 });
             }
-
+*/
 
                      }
-                 });*/
+                 });
              } else if (event.target.matches("#yearbookpage")) {
                 
                             document.getElementById("State_name").innerHTML = fullstatename;
@@ -460,7 +472,7 @@ $('.page__content').on('scroll', scrollevent);
 
 
              } else if (event.target.matches("#settingpage")) {
-                    $('#Logout').on('click',Logout);
+                   
              }
 
          }); // the end of init event
@@ -472,7 +484,7 @@ $('.page__content').on('scroll', scrollevent);
 
 
 
-/* this is the end of device ready function *************************
+/* this is the end of device ready function *******************
 
 
             *********************************************************
@@ -508,17 +520,20 @@ $('.page__content').on('scroll', scrollevent);
 
 
 
-
-
-
     
 
   
          document.addEventListener("show", function (event) {
     
+    
                 
             if (event.target.matches('#newspage')) {
   
+   
+         
+         
+         
+         
                  pageshowing = "newspage";
 
                 newspageend = false;
@@ -530,27 +545,48 @@ $('.page__content').on('scroll', scrollevent);
 
 
 // end of fetching infomation
-}else if (event.target.matches('#signin')) {
-                  
-  
-                
+} else   if (event.target.matches('#resetpasswordpage')) {
+ 
+                 if (StateCode !== undefined) {
+                  //   document.getElementById('newpasswordusernameplaceholder').innerHTML = StateCode;
+                 } else {
+                    // document.getElementById('newpasswordusernameplaceholder').innerHTML = "Corps Member";
+                 }
+
+                 document.getElementById("btngetresetPasswordcode").addEventListener('click', Loginandchangepassword);
+
+
+
+
              }
-                
-            else if (event.target.matches("#yearbookpage")) {
+else if (event.target.matches('#signinpage')){
+               
+               
+               
+                document.getElementById("btnSignin").addEventListener('click', Signincliick);
+                document.getElementById("Logout").addEventListener('click', Logout);
+
+         
+
+
+                var GetPassword = function () {
+
+
+                    document.querySelector('#myNavigator').pushPage('changetemppass.html');
+
+
+                }
+
+                document.getElementById('Newuser').addEventListener('click', GetPassword);
+
+
+
+            
+             }else if (event.target.matches("#yearbookpage")) {
 
                  pageshowing = "yearbookpage";
                 
-                 wall.fitWidth();
-                 wall.refresh();
-
-
-
-
-                 wall.container.find('.brick img').on('load', function () {
-                     wall.fitWidth();
-                     wall.refresh();
-                 });
-
+              
 
                     if(document.getElementById("freewall").innerHTML.trim()){
 
@@ -595,6 +631,7 @@ $('.page__content').on('scroll', scrollevent);
 
              } else if (event.target.matches("#profilepage")) {
 
+           
                  //var mySwiper = document.querySelector('.swiper-container_profile').swiper
 
                  swiperprofilepage = new Swiper('.swiper-container_profile', {
@@ -610,12 +647,12 @@ $('.page__content').on('scroll', scrollevent);
                          // when window width is <= 480px
                          480: {
                              slidesPerView: 1,
-                             spaceBetween: 10
+                             spaceBetween: 20
                          },
                          // when window width is <= 640px
                          640: {
-                             slidesPerView: 1,
-                             spaceBetween: 10
+                             slidesPerView: 2,
+                             spaceBetween: 30
                          }
                      },
                      pagination: {
@@ -629,17 +666,12 @@ $('.page__content').on('scroll', scrollevent);
                  });
 
             
-                
 
-
+           
 
                  var state = document.getElementById('StateCode');
                  state.disable = true;
                  pageshowing = "profilepage";
-
-
-
-
 
 
                  $("#edit_switch").on('change', function () {
@@ -649,7 +681,9 @@ $('.page__content').on('scroll', scrollevent);
 
                      
                      if (edit_switch.checked === true) {
-
+                         ons.notification.toast({message: 'You can edit the field now.', timeout: 2000});
+                          
+                        
                          $("#saving_fields_toast").hide();
                          $("#edit_fields_toast").show();
 
@@ -664,12 +698,12 @@ $('.page__content').on('scroll', scrollevent);
                              ++i_num;
                          });
 
-                         setTimeout($("#edit_fields_toast").fadeOut(6000), 7000);
+                         
 
 
                      } else {
-                         $("#edit_fields_toast").hide();
-                         $("#saving_fields_toast").show();
+                         
+                         
 
                          var i = $(".profile_edit"); // Get all elements of with  class profile_edit
                          var i_num = 0; //iterator
@@ -719,7 +753,7 @@ $('.page__content').on('scroll', scrollevent);
 
 
 
-                         setTimeout($("#saving_fields_toast").fadeOut(6000), 7000);
+                         ons.notification.toast({message: 'The fields are being Saved.', timeout: 2000});
 
                      }
                  })
@@ -735,10 +769,14 @@ $('.page__content').on('scroll', scrollevent);
                      if (dialog) {
                          dialog.show();
 
-                         document.getElementById("cancel").addEventListener("click", function () {
+                          document.getElementById("cancel").addEventListener("click", function () {
+                                     document.getElementById("input_Current").value = "";
+                                     document.getElementById("input_password").value = "";
+                                     document.getElementById("input_confrim_password").value = "";
 
-                             dialog.hide();
-                         });
+
+                                     dialog.hide();
+                                 });
                      } else {
                          ons.createDialog('password_change_dialog_page.html')
                              .then(function (dialog) {
@@ -760,7 +798,7 @@ $('.page__content').on('scroll', scrollevent);
 
 
                  });
-                
+
 
                  document.getElementById('camera_post').addEventListener('click', function () {
                      console.log("camera clicked");
@@ -842,7 +880,7 @@ console.dir(arguments);
                   */
 
 
-                 $("#btn_Post_event").on("click", function (e){
+                 $("#btn_Post_event").on("click", function (e) {
 
                      var post_text = $('#text_area_post').val();
                      var timeofpost = Date.now();
@@ -856,55 +894,10 @@ console.dir(arguments);
                      var profilePic = "NYSCYEARBOOK" + (md5(timeofpost)) + ".jpg"
                      var location = "";
                      
-                   
-                     // well user POOL ID IS NOT WORKING  WE WILL STICK WITH THE IDENTITY ID    //
-                    // console.log("my user pool id = : " + BucketName.config.credentials.params.UserPoolId);
-                    // console.log("my code " + BucketName.config.credentials.params.IdentityId);
-                    
-                     
-                     var bucket = new AWS.S3({ params: { Bucket: "nyscapp-userfiles-mobilehub-1454067712" } });
-
-                     bucket.listObjects({}, function (err, resp) {
-                         if (err) {
-                             console.log(err);
-                         }
-                         else {
-                             console.log(resp.Contents);
-                         }
-                     })
-
-                     bucket.config.credentials.get(function () {
-
-                         console.log("My Identity Id = : " + bucket.config.credentials.params.IdentityId);
-                         // well user POOL ID IS NOT WORKING  WE WILL STICK WITH THE IDENTITY ID    //
-                         // console.log("my user pool id = : "+ bucket.config.credentials.params.UserPoolId);
-
-                     });
-
-
-                     var params_buc = {
-                       
-                         Key: 'public/example-image.png'
-                     }
-
-
-
-                     bucket.getObject(params_buc, function (err, data){
-                         if (err) {
-                             console.log(err);
-                         } else {
-                             console.log(data);
-
-                         }
-                     });
-
-
-
-                   
                      if ((post_text) || (pictures.length > 0)) {
                        
 
-                         var userid = bucketname.config.credentials.params.IdentityId;
+                         var userid = bucket.config.credentials.params.IdentityId;
                          console.log(userid);
                          console.log(path);
                          var path = "private/" +    userid + "/" + (md5(value)) + "/";
@@ -1009,7 +1002,7 @@ console.dir(arguments);
                      */
 
 
-
+                        ons.notification.toast({message: 'Post Successful.', timeout: 2000});
                          
                          
                      } else {
@@ -1139,7 +1132,8 @@ console.dir(arguments);
 
 
                 function Signincliick() {
-        
+                    
+                    $('#signinspinner').fadeIn(400);
                   
                    StateCode = document.getElementById('txtStateCode').value.trim();
                    OldPassword = document.getElementById('txtPassword').value.trim();
@@ -1153,7 +1147,7 @@ console.dir(arguments);
       
                    } else {
                     StateCode = StateCode.toUpperCase();
-                       $('#signinspinner').fadeIn(400);
+                      
       
                        var authenticationData = {
                            Username: StateCode,
@@ -1178,67 +1172,37 @@ console.dir(arguments);
                        cognitoUser.authenticateUser(authenticationDetails, {
       
                            onSuccess: function (result, userConfirmationNecessary) {
-                            Loaduserdata(cognitoUser.username);
-                            
-                            LoadallState();
-                            Checker(cognitoUser.username)
+
+                               StateCode = cognitoUser.username;
+                               document.getElementById("username-id").innerHTML = " "+StateCode;
+                               $('#signinboard').fadeOut(400);                               
+                               $('#signoutboard').fadeIn(600);
+                               Loaduserdata(cognitoUser.username);
+                               LoadallState();
+                               Checker(cognitoUser.username)
+
+
                                //AWS.config.region = 'us-west-2';
-                        
                             AWS.config.region = 'us-east-1';
       
       
                                //let loginsCognitoKey = "cognito-idp.us-west-2.amazonaws.com/us-west-2_TLjDm1fS9";
-                            
-                         
-                            AWS.config.credentials = new AWS.CognitoIdentityCredentials({
-                                RoleArn: "arn:aws:iam::226813198723:role/nyscapp_auth_MOBILEHUB_1454067712",
-                                    IdentityPoolId : 'us-east-1:6527ed6d-4483-4f36-a638-a24c98cfcd2e', // your identity pool id here
-                Logins : {
-                    // Change the key below according to the specific region your user pool is in.
-                    'cognito-idp.us-east-1.amazonaws.com/us-east-1_NNYGO9I8N': result.getIdToken().getJwtToken()
-                }
-            });
 
-                               //refreshes credentials using AWS.CognitoIdentity.getCredentialsForIdentity()
-            AWS.config.credentials.refresh((error) => {
-                if (error) {
-                     console.error(error);
-                } else {
-                     // Instantiate aws sdk service objects now that the credentials have been updated.
-                     //example: var s3 = new AWS.S3();
-                     console.log('Successfully logged!');
-                }
-            });
-        
-                               var params = {
-                                   RoleArn: "arn:aws:iam::226813198723:role/nyscapp_auth_MOBILEHUB_1454067712",
+                            let loginsCognitoKey = "cognito-idp:us-east-1:226813198723:userpool/us-east-1_NNYGO9I8N";
+                               let loginsIdpData = {};
+                               loginsIdpData[loginsCognitoKey] = result.getIdToken().getJwtToken();
+                               AWS.config.credentials = new AWS.CognitoIdentityCredentials({
+                                   RoleArn: 'arn:aws:iam::429004225449:role/testapp_auth_MOBILEHUB_1221341559',
+                                   IdentityPoolId: "us-west-2:88bc7dd3-e927-4788-858b-ae2b26200544",
+                                   Logins: loginsIdpData
+      
 
-                                   RoleSessionName: 'Corpers_session',
-
-                                   DurationSeconds: 3600,
-
-                               };
-
-
-
-
-                               var sts = new AWS.STS();
-                               sts.assumeRole(params, function (err, data) {
-                                   if (err) {
-                                       console.log(err)
-                                   } else {
-                                       console.log("sts assumed "+data)
-                                   };
-
-
-
-                               });
-
-                               AWS.config.credentials.get(function (err) {
-                                   if (err) console.log(err);
-                                   else console.log(AWS.config.credentials);
-                               });
-
+                                  // RoleArn: 'arn:aws:iam::429004225449:role/testapp_auth_MOBILEHUB_1221341559',
+                               //IdentityPoolId: "us-east-1:226813198723:userpool/us-east-1_NNYGO9I8N",//"us-west-2:88bc7dd3-e927-4788-858b-ae2b26200544",
+                               //Logins: loginsIdpData
+                               })
+      
+      
       
                                /*
       
@@ -1265,7 +1229,7 @@ console.dir(arguments);
       
       
       
-                               document.querySelector('#myNavigator').pushPage('main.html');
+                               //document.querySelector('#myNavigator').pushPage('news.html');
       
                            },
       
@@ -1298,7 +1262,7 @@ console.dir(arguments);
                           
                                 
       
-                                   $('#signinspinner').fadeOut(2000);
+                                   $('#signinspinner').fadeOut(4000);
                                    return;
                                }
                            },
@@ -1321,26 +1285,13 @@ console.dir(arguments);
 
 
         
-         
-
-
-var GetPassword = function(){
- 
-
-    document.querySelector('#myNavigator').pushPage('changetemppass.html');      
-
-    
-}
-
-         document.getElementById('Newuser').addEventListener('click',GetPassword);
-
 
          
 
 
 function LoadallState(){
                                 
-                        $('#progress-bar-news').fadeIn(300);
+                      
                                     $.ajax({
                         type: "POST",
                         url: pathtophp + "newspageloaddata.php",  
@@ -1352,7 +1303,7 @@ function LoadallState(){
                                // initslider();
                         },
                         //xhr: 
-                    /*	xhr: function(){
+                    /*    xhr: function(){
 		var xhr = new window.XMLHttpRequest();
 			
 			xhr.upload.addEventListener('progress', function(e){
@@ -1381,7 +1332,7 @@ function LoadallState(){
                                                    
                              
                              LoadCM(r.n); 
-                             $('#progress-bar-news').fadeOut(300);
+                            ;
                           skip = parseInt(r.skip_return) + 10;
                                                }
                             else{
@@ -1450,6 +1401,7 @@ function LoadallState(){
                                    
                             },
                             error:function(e){
+                                 ons.notification.alert("your error is  " +e.responseText);
                                 console.log(e.responseText);
                             }
 
@@ -1615,6 +1567,7 @@ function LoadallState(){
 
  function checksesssion(){
     
+     $('#signinspinner').fadeIn(400);
   
                   var poolData = {
                      UserPoolId: user_pool_id,
@@ -1630,106 +1583,57 @@ function LoadallState(){
          
              if(err){
                  
-                
+                 $('#signinspinner').fadeOut();
                 if (err.code == "NetworkingError") {
                  
                     ons.notification.alert("Check your internet Connection");
                     return;
                 }
                 else{
-                    ons.notification.alert("your error is  " + err.message);
-                    console.log(JSON.stringify(err,null,3));
+                    ons.notification.alert("your error is  " + err.message);                   
                     return;
                 }
              }
             
              StateCode = cognitoUser.username;
-            Loaduserdata(cognitoUser.username);
-            LoadallState();
-            Checker(cognitoUser.username)
-     
-            // NOTE: getSession must be called to authenticate user before calling getUserAttributes
-            cognitoUser.getUserAttributes(function(err, attributes) {
-                if (err) {
-                    // Handle error
-                } else {
-                   
-                    // Do something with attributes
-                }
-            });
+              $(".allpages-sign-in-notifier").hide();
+            $("#container-id").show();
+            $("#freewall").show();
+            $("#profilepage-container").show();
             
-          
-                         AWS.config.region = 'us-east-1';
+             
+             
+             document.getElementById("username-id").innerHTML = " "+StateCode;
+             $('#signinboard').fadeOut(400);             
+             $('#signoutboard').fadeIn(400);
+                Loaduserdata(cognitoUser.username);
+                LoadallState();
+                Checker(cognitoUser.username)
+               
 
-
-            //let loginsCognitoKey = "cognito-idp.us-west-2.amazonaws.com/us-west-2_TLjDm1fS9";
-
-
+                         AWS.config.region = 'us-west-2';
+                         let loginsCognitoKey = "cognito-idp.us-west-2.amazonaws.com/us-west-2_TLjDm1fS9";
+                         let loginsIdpData = {};
+                         loginsIdpData[loginsCognitoKey] = session.getIdToken().getJwtToken();
                          AWS.config.credentials = new AWS.CognitoIdentityCredentials({
-                             RoleArn: "arn:aws:iam::226813198723:role/nyscapp_auth_MOBILEHUB_1454067712",
-                             IdentityPoolId: 'us-east-1:6527ed6d-4483-4f36-a638-a24c98cfcd2e', // your identity pool id here
-                             Logins: {
-                                 // Change the key below according to the specific region your user pool is in.
-                                 'cognito-idp.us-east-1.amazonaws.com/us-east-1_NNYGO9I8N': session.getIdToken().getJwtToken()
-                             }
-                         });
-
-              AWS.config.credentials.refresh((error) => {
-                if (error) {
-                     console.error(error);
-                } else {
-                     // Instantiate aws sdk service objects now that the credentials have been updated.
-                    //example: var s3 = new AWS.S3();
-                    
-                    BucketName = 'nyscapp-userfiles-mobilehub-1454067712';
-                    var bucketRegion = 'us-east-1';
-                    var IdentityPoolId = 'us-east-1:6527ed6d-4483-4f36-a638-a24c98cfcd2e';
-
-
-                    s3 = new AWS.S3({
-                        apiVersion: '2006-03-01',
-                        params: { Bucket: BucketName }
-                    });
-                  
-
-
-
-                     console.log('Successfully logged!');
-                }
-            });
-
-                         var params = {
-                             RoleArn: "arn:aws:iam::226813198723:role/nyscapp_auth_MOBILEHUB_1454067712",
-
-                             RoleSessionName: 'Corpers_session',
-
-                             DurationSeconds: 3600,
-
-                         };
-
-
-
-
-                         var sts = new AWS.STS();
-                         sts.assumeRole(params, function (err, data) {
-                             if (err) {
-                                 console.log(err)
-                             } else {
-                                 console.log("sts assumed " + data)
-                             };
-
-
-
-                         });
-
-
-          document.querySelector('#myNavigator').pushPage('main.html');
+                             RoleArn: 'arn:aws:iam::429004225449:role/testapp_auth_MOBILEHUB_1221341559',
+                             IdentityPoolId: "us-west-2:88bc7dd3-e927-4788-858b-ae2b26200544",
+                             Logins: loginsIdpData
+                         })
+         
+          //document.querySelector('#myNavigator').pushPage('news.html');
  
             // Instantiate aws sdk service objects now that the credentials have been updated.
             // example: var s3 = new AWS.S3();
+                         $('#signinspinner').fadeOut(4000);
 
         });
-    }
+    }else{
+            $("#container-id").hide();
+            $("#freewall").hide();
+            $("#profilepage-container").hide();
+             $(".allpages-sign-in-notifier").show();
+    }  
 
    
 }
@@ -1853,7 +1757,7 @@ function LoadallState(){
                      },
                      // when window width is <= 640px
                      640: {
-                         slidesPerView: 1,
+                         slidesPerView: 2,
                          spaceBetween: 30
                      }
                  },
@@ -1980,8 +1884,8 @@ function LoadallState(){
                    },
                    // when window width is <= 640px
                    640: {
-                       slidesPerView: 1,
-                       spaceBetween: 20
+                       slidesPerView: 2,
+                       spaceBetween: 30
                    }
                },
    
@@ -2059,8 +1963,8 @@ function LoadallState(){
                                     
                                        ons.notification.alert("Check your internet Connection");
                                        return;
-                                   }
-                                   else{
+                                   }  $('#signinspinner').f
+                                   else{ById("username-id")
                                        ons.notification.alert("your error is  " + err.message);
                                        console.log(JSON.stringify(err,null,3));
                                        return;
@@ -2107,7 +2011,7 @@ function LoadallState(){
                                        $('#errormsg').fadeOut(200);
                                         resetdialog.hide();
                                         $('#signinspinnergetcode').fadeOut(400);
-                                        document.querySelector('#myNavigator').pushPage('main.html');      
+                                       document.querySelector('#myNavigator').pushPage('signin.html');       
                                     }   
                                     else {
                                         document.getElementById("errormsg").innerHTML = "Passwords don't match";
@@ -2166,7 +2070,7 @@ function LoadallState(){
                                                $('#errormsg').fadeOut(200);
                                                $('#signinspinnergetcode').fadeOut(400);
                                                 resetdialog.hide();
-                                                document.querySelector('#myNavigator').pushPage('main.html');      
+                                                document.querySelector('#myNavigator').pushPage('signin.html');      
                                             }   
                                             else {
                                                 document.getElementById("errormsg").innerHTML = "Passwords don't match";
@@ -2329,8 +2233,10 @@ function LoadallState(){
                              
                     },
                     error:function(e){
+                          $("#progress-id-yearbook").fadeOut(3000)
+                         
                         console.log(e);
-
+  
                     }
 
                 })
@@ -2409,7 +2315,8 @@ function LoadallState(){
          
          */
 
-          
+
+
             function clearCache() {
                 navigator.camera.cleanup();
             }
@@ -2418,7 +2325,7 @@ function LoadallState(){
             function setOptions(srcType) {
                 var options = {
                     quality: 80,
-                    destinationType: Camera.DestinationType.FILE_URI,
+                    destinationType: Camera.DestinationType.DATA_URL,//FILE_URI,
                     sourceType: srcType,
                     //  encodingType: Camera.EncodingType.JPEG,
                     mediaType: Camera.MediaType.PICTURE,
@@ -2443,12 +2350,12 @@ function LoadallState(){
             }
 
 
-
-
             function Setimagetodisplay(imageURI) {
 
 
 
+                alert(imageURI);
+                alert('data:image/jpeg;base64,' + imageURI);
                 //pictures.push(newfilepath);
                 //navigator.notification.alert("new file path" + newfilepath);
                 //window.FilePath.resolveNativePath(imageURI, function (newfilepath) {
@@ -2456,95 +2363,22 @@ function LoadallState(){
 
                   //  pictures.push(newfilepath);
                 //}, function (error) { alert("FilePath.resolveNativePath" + error); });
-    
-   
+
+                swiperprofilepage.prependSlide('<div class="swiper-slide"><img  id="" class= "img_wall_pic" src="' + imageURI + '" width="100%"/></div>');
 
 
 
-                picture_index = pictures.length;
-                swiperprofilepage.appendSlide('<div  class="swiper-slide"> <div class="swiper-container-upload"> <div class="picture_div_class"> <img  id="" class= "img_wall_pic" src="' + imageURI + '" width="100%"/></div><div class="picture_delete_btn_class" id="' + picture_index + '"> <button  class="  button--quiet">Delete</button>     </div></div></div>');
-              
-
-
-                pictures.push(imageURI);
-                getFileEntry(imgUri);
-                //picture_index += 1;
-                  console.log(pictures);
-             
-
-
-
-                document.getElementById(picture_index).addEventListener("click", deleteimage_from_slide_and_array);
-             
-                //getFileEntry(imageURI);
-
-            
                 //  var image = document.getElementById('test-image');
                 //image.src = imageURI; '<div class="swiper-slide">Slide 1"</div>',
 
                 //    $("#test-image").attr('src', imageURI)
-              
-
 
 
             }
 
-            function getFileEntry(imgUri) {
-                alert(imgUri);
-                window.resolveLocalFileSystemURL(imgUri, function success(fileEntry) {
-
-                    // Do something with the FileEntry object, like write to it, upload it, etc.
-                    // writeFile(fileEntry, imgUri);
-                    console.log("got file: " + fileEntry.fullPath);
-                    // displayFileData(fileEntry.nativeURL, "Native URL");
-
-                }, function () {
-                    alert(imgUri);
-                    // If don't get the FileEntry (which may happen when testing
-                    // on some emulators), copy to a new FileEntry.
-                    createNewFileEntry(imgUri);
-                });
-            }
 
 
-            function deleteimage_from_slide_and_array() {
-                var deleted_id = this.id;
 
-                console.log(deleted_id);
-                
-                
-                
-                    pictures.splice(this.id, 1);
-                    //      picture_index -= 1;
-                   
-                   
-
-
-                    $("." + this.id).fadeOut(800);
-                    swiperprofilepage.removeSlide(this.id);
-                   
-                    
-                    console.log(pictures);
-                
-                    var i = $(".picture_delete_btn_class");
-
-                $.each(i, function (iis) {
-
-                    console.log("iis " + iis);
-                    console.log("deleted_id " + deleted_id);
-                    console.log(i[iis].id)
-
-
-                    if (deleted_id < i[iis].id)
-                    {
-                        console.log("changing iis " + iis)
-
-                        $("#" + i[iis].id).attr('id', i[iis].id - 1);
-
-                        console.log("changing ....");
-                    }                  
-                })
-            }
 
 
             function openCamera(Camerachoice_local) {
@@ -2557,9 +2391,11 @@ function LoadallState(){
                     navigator.camera.getPicture(Setimagetodisplay, cameraError, options);
 
 
+
                 } else if (Camerachoice_local == "CAMERA") {
 
-                    var srcType = Camera.PictureSourceType.CAMERA;                    
+                    var srcType = Camera.PictureSourceType.CAMERA;
+                    
                     var options = setOptions(srcType);
                     navigator.camera.getPicture(Setimagetodisplay, cameraError, options);
 
@@ -2605,6 +2441,7 @@ function LoadallState(){
 
 
             function Logout(){
+              ons.notification.alert("clicked");
                 var poolData = {
                              UserPoolId: user_pool_id,
                              ClientId: Client_Id
@@ -2614,13 +2451,19 @@ function LoadallState(){
                 
             var cognitoUser = userPool.getCurrentUser();
         
-        if (cognitoUser != null) {
-            document.querySelector('#myNavigator').pushPage('signin.html');
-            window.location.reload(true);
-            
-            cognitoUser.signOut();
+            if (cognitoUser != null) {
 
+             
             
+                cognitoUser.signOut();
+                console.log("login out");
+               
+                document.getElementById("username-id").innerHTML = "";
+                $('#signoutboard').fadeOut(400);                                
+
+             //   document.querySelector('#myNavigator').pushPage('signin.html');
+        
+             $('#signinboard').fadeIn(400);
           }
          //  cognitoUser.globalSignOut();                        
     }
@@ -2628,14 +2471,19 @@ function LoadallState(){
 
 
 
+function notLoggedin-signin-btn(){
+                   
+                    document.querySelector("#myNavigator").pushPage("signin.html");
+                    
+                }
+         
 
 
 
 
 
 
-
-     }
+     })
 
      
 
@@ -2831,12 +2679,7 @@ function LoadallState(){
     }
 
 */
-
-
-     
-
-
-
+   
      function ChangePassword() {
          $("#change_pass_signinspinner-2").fadeIn(400);
          var Current_password = document.getElementById("input_Current").value.trim();
@@ -2848,13 +2691,7 @@ function LoadallState(){
              //check if 
              if (Newpassword === ConfirmPassword) {
 
-
-
-
-                 document.getElementById("input_Current").value = "";
-                 document.getElementById("input_password").value = "";
-                 document.getElementById("input_confrim_password").value = "";
-
+            
                  cognitoUser.changePassword(Current_password,Newpassword, function(err, result) {
         if (err) {
               ons.notification.alert(err);
@@ -2864,15 +2701,20 @@ function LoadallState(){
                
             return;
         }
-             $('#change_pass_successmsg').fadeOut(200);
+                 $('#change_pass_successmsg').fadeOut(200);
+                                     document.getElementById("input_Current").value = "";
+                 document.getElementById("input_password").value = "";
+                 document.getElementById("input_confrim_password").value = "";
+
                  var dialog = document.getElementById('password_change_dialog');
                   dialog.hide();
 
                  $("#change_pass_signinspinner-2").fadeOut(400);
                  $('#change_pass_errormsg').fadeOut(100);
                  $('#change_pass_successmsg').fadeIn(200);
-                setTimeout($("#saved_info_fields_toast").fadeOut(6000), 7000);
-        
+
+                ons.notification.toast({message: 'Password Changed Successfully.', timeout: 2000});
+                
     });
             
                 
