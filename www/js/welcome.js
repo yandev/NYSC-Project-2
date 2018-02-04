@@ -63,7 +63,7 @@
      // var bucketname = "newstest-userfiles-mobilehub-1607183395";
     var bucketname = "nyscapp-userfiles-mobilehub-1454067712";
   //   document.addEventListener('deviceready', onDeviceReady.bind(this), false);
-
+  var  navigator;
   
  ons.ready(function() {
    
@@ -72,7 +72,7 @@
     
         
     //    document.getElementById("btnSignin2").addEventListener('click', Signincliick2);
-        
+          navigator =  document.querySelector('#myNavigator');
     checksesssion();
        //  document.addEventListener("scroll", ScrollLoadmore);
     // document.querySelector.bind(document);
@@ -132,7 +132,7 @@
                 
 
                  
-$('.page__content').on('scroll', scrollevent);
+            $('.page__content').on('scroll', scrollevent);
  
              if (event.target.matches('#resetpasswordpage')) {
  
@@ -149,7 +149,8 @@ $('.page__content').on('scroll', scrollevent);
 
              }else if (event.target.matches('#signinpage')){
                
-                console.log(" the init ")
+              
+                $("#signinspinner").hide();
                 document.getElementById("btnSignin").addEventListener('click', Signincliick);
                 document.getElementById("Logout").addEventListener('click', Logout);
 
@@ -159,7 +160,7 @@ $('.page__content').on('scroll', scrollevent);
                 var GetPassword = function () {
 
 
-                    document.querySelector('#myNavigator').pushPage('changetemppass.html');
+                    navigator.pushPage('changetemppass.html');
 
 
                 }
@@ -173,153 +174,14 @@ $('.page__content').on('scroll', scrollevent);
                   
 
                   
-
-//$(window).scroll();
-                   //  document.addEventListener("scroll", ScrollLoadmore);
+                   
 
                         
                         newspageend = false;
                                               $('#thatsall-id').fadeOut();
-                 AWS.config.credentials.refresh((error) => {
+            
 
 
-
-
-                     if (error) {
-                         console.error(error);
-                     } else {
-
-                         bucket = new AWS.S3();
-
-                         var params_buc = {
-                             Bucket: bucketname,
-                             Key: 'public/122.js/Domain_listing.txt'
-                         }
-
-                        /* var params = {
-                             RoleArn: 'arn:aws:iam::429004225449:role/testapp_auth_MOBILEHUB_1221341559',
-                           
-                             RoleSessionName: 'Corpers_session',
-                           
-                             DurationSeconds: 3600,
-
-                         };
-                         */
-                     
-                       
-
-                         var sts = new AWS.STS();
-                         sts.assumeRole(params, function (err, data) {
-                             if (err) {
-
-                             } else {
-
-                             };
-
-
-
-                         });
-                         bucket.getObject(params_buc, function (err, data) {
-                             if (err) {
-                                 console.log(err);
-                             } else {
-                                 console.log(data.Body.toString());
-
-                             }
-                         });
-                         //console.log(AWS.config.credentials.params.IdentityId);
-
-                         //console.log(GetSortKey(AWS.config.credentials.params.IdentityId));
-
-                         /* 
-      
-      
-                
-
-            bucket.listObjects({}, function(err, resp){
-                if(err){
-                    console.log(err);
-                }
-                else{
-                    console.log(resp.Contents);
-                }
-            })
-           
-          bucket.config.credentials.get(function() {
-              
-  console.log("My Identity Id = : " + bucket.config.credentials.params.IdentityId);
- // well user POOL ID IS NOT WORKING  WE WILL STICK WITH THE IDENTITY ID    //
- // console.log("my user pool id = : "+ bucket.config.credentials.params.UserPoolId);
-    
-});
-            var fileChooser = document.getElementById('fileid');
-            var file = fileChooser.files[0];
-             var userid = "";
-       userid = bucket.config.credentials.params.IdentityId;
-       
-            if (file) {
-                  var fileName = file.name;
-                  //us-west-2:ecb015c8-3a26-4150-bf91-df6d01fe4449 try puting in this
-                var params = { Key: "private/"+userid+"/"+fileName, ContentType: file.type, Body: file };
-                bucket.upload(params).on('httpUploadProgress', function (evt) {
-                    console.log("Uploaded :: " + parseInt((evt.loaded * 100) / evt.total) + '%');
-                }).send(function (err, data) {
-                    console.log("File uploaded successfully.");
-                });
-            }
-
-        }
-    });
-
-
-      
-      
-      
-      
-      
-      
-      
-      var bucket = new AWS.S3({ params: { Bucket: "newstest-userfiles-mobilehub-1607183395" } });
-
-            bucket.listObjects({}, function(err, resp){
-                if(err){
-                    console.log(err);
-                }
-                else{
-                    console.log(resp.Contents);
-                }
-            })
-         
-          bucket.config.credentials.get(function() {
-               
-  console.log("My Identity Id = : " + bucket.config.credentials.params.IdentityId); 
-
-
-
-
- // well user POOL ID IS NOT WORKING  WE WILL STICK WITH THE IDENTITY ID    //
- // console.log("my user pool id = : "+ bucket.config.credentials.params.UserPoolId);
-    
-//});
-            var fileChooser = document.getElementById('fileid');
-            var file = fileChooser.files[0];
-             var userid = "";
-       userid = bucket.config.credentials.params.IdentityId;
-       
-            if (file) {
-                  var fileName = file.name;
-                  //us-west-2:ecb015c8-3a26-4150-bf91-df6d01fe4449 try puting in this
-                var params = { Key: "private/"+userid+"/"+fileName, ContentType: file.type, Body: file };
-                bucket.upload(params).on('httpUploadProgress', function (evt) {
-                    console.log("Uploaded :: " + parseInt((evt.loaded * 100) / evt.total) + '%');
-                }).send(function (err, data) {
-                    console.log("File uploaded successfully.");
-                });
-            }
-*/
-
-                     }
-                 });
              } else if (event.target.matches("#yearbookpage")) {
                 
                             document.getElementById("State_name").innerHTML = fullstatename;
@@ -394,7 +256,8 @@ $('.page__content').on('scroll', scrollevent);
 
 
 
-                 $('.toast').hide();
+
+
 
                  var i = $(".profile_edit"); // Get all elements of with  class profile_edit
                  var i_num = 0; //iterator
@@ -562,22 +425,6 @@ $('.page__content').on('scroll', scrollevent);
 else if (event.target.matches('#signinpage')){
                
                
-               
-                document.getElementById("btnSignin").addEventListener('click', Signincliick);
-                document.getElementById("Logout").addEventListener('click', Logout);
-
-         
-
-
-                var GetPassword = function () {
-
-
-                    document.querySelector('#myNavigator').pushPage('changetemppass.html');
-
-
-                }
-
-                document.getElementById('Newuser').addEventListener('click', GetPassword);
 
 
 
@@ -619,8 +466,8 @@ else if (event.target.matches('#signinpage')){
 
                  document.getElementById('choose_year').addEventListener('click', function () {
 
-                     
-                     document.querySelector('#myNavigator').pushPage('ViewMoreoptions.html');
+                    
+                     navigator.pushPage('ViewMoreoptions.html');
 
                  })
 
@@ -681,12 +528,12 @@ else if (event.target.matches('#signinpage')){
 
                      
                      if (edit_switch.checked === true) {
+
+                        autosize(document.querySelectorAll('#AboutME'));
+
                          ons.notification.toast({message: 'You can edit the field now.', timeout: 2000});
                           
-                        
-                         $("#saving_fields_toast").hide();
-                         $("#edit_fields_toast").show();
-
+                       
                          var i = $(".profile_edit"); // Get all elements of with  class profile_edit
                          var i_num = 0; //iterator
                          $.each(i, function () { //for each item with the class profile_edit disable it
@@ -703,7 +550,8 @@ else if (event.target.matches('#signinpage')){
 
                      } else {
                          
-                         
+                        autosize(document.querySelectorAll('#AboutME'));
+
 
                          var i = $(".profile_edit"); // Get all elements of with  class profile_edit
                          var i_num = 0; //iterator
@@ -735,7 +583,7 @@ else if (event.target.matches('#signinpage')){
                             success:function(data){
                                 console.log(data);
                                 
-
+                                autosize(document.querySelectorAll('#AboutME'));
                             },
                             error:function(e){
                                     console.log(e.responseText);
@@ -760,8 +608,7 @@ else if (event.target.matches('#signinpage')){
 
 
 
-                 autosize(document.querySelectorAll('textarea'));
-
+         
                  // change password Dialog function
                  document.getElementById("btn_change_password").addEventListener("click", function () {
                      var dialog = document.getElementById('password_change_dialog');
@@ -1133,7 +980,7 @@ console.dir(arguments);
 
                 function Signincliick() {
                     
-                    $('#signinspinner').fadeIn(400);
+             
                   
                    StateCode = document.getElementById('txtStateCode').value.trim();
                    OldPassword = document.getElementById('txtPassword').value.trim();
@@ -1146,6 +993,7 @@ console.dir(arguments);
       
       
                    } else {
+                    $('#signinspinner').fadeIn(600);
                     StateCode = StateCode.toUpperCase();
                       
       
@@ -1174,9 +1022,16 @@ console.dir(arguments);
                            onSuccess: function (result, userConfirmationNecessary) {
 
                                StateCode = cognitoUser.username;
-                               document.getElementById("username-id").innerHTML = " "+StateCode;
+                               console.log("State code" + cognitoUser.username);
+                              // document.getElementById("username-id").innerHTML = " "+StateCode;
                                $('#signinboard').fadeOut(400);                               
                                $('#signoutboard').fadeIn(600);
+                               $(".allpages-sign-in-notifier").hide();
+                               $("#container-id").show();
+                               $("#freewall").show();
+                               $("#profilepage-container").show();
+                               
+                                
                                Loaduserdata(cognitoUser.username);
                                LoadallState();
                                Checker(cognitoUser.username)
@@ -1225,7 +1080,7 @@ console.dir(arguments);
       
       
                                //call refresh method in order to authenticate user and get new temp credentials
-                               $('#signinspinner').fadeOut();
+                               $('#signinspinner').hide();
       
       
       
@@ -1236,7 +1091,8 @@ console.dir(arguments);
                            onFailure: function (err) {
                                if (err) 
                                {
-                                   
+                                $('#signinspinner').hide();
+      
                                   if(err.code  == "PasswordResetRequiredException" ){
 
                                     ons.notification.alert("Looks like you forgot your password. ")
@@ -1256,13 +1112,7 @@ console.dir(arguments);
                                     console.log(JSON.stringify(err,null,3));
                                     
                                    } 
-                                   
                                   
-                                    
-                          
-                                
-      
-                                   $('#signinspinner').fadeOut(4000);
                                    return;
                                }
                            },
@@ -1290,8 +1140,8 @@ console.dir(arguments);
 
 
 function LoadallState(){
-                                
-                      
+    $('#progress-bar-news').fadeIn(300);
+    
                                     $.ajax({
                         type: "POST",
                         url: pathtophp + "newspageloaddata.php",  
@@ -1299,7 +1149,7 @@ function LoadallState(){
                         dataType: "json",
                         
                         complete:function(){
-                            
+                            $('#progress-bar-news').fadeOut(1000);
                                // initslider();
                         },
                         //xhr: 
@@ -1338,7 +1188,7 @@ function LoadallState(){
                             else{
                                 newspageend = true;
                                 $('#thatsall-id').fadeIn(500);
-                                $('#progress-bar-news').fadeOut(300);
+                              
                                 //  ons.notification.alert("No more data to load");
                             }
                              
@@ -1435,7 +1285,7 @@ function LoadallState(){
                      // this if statement to check if the wall page is be
                     
                 
-                       document.getElementById("ii").innerHTML = statecode_local;
+                       document.getElementById("Cm_wall").innerHTML = statecode_local;
                     Load_CM_Wall_call(r.n); 
                        
                       
@@ -1602,8 +1452,9 @@ function LoadallState(){
             $("#profilepage-container").show();
             
              
-             
-             document.getElementById("username-id").innerHTML = " "+StateCode;
+            
+            
+            // document.getElementById("username-id").innerHTML = " "+StateCode;
              $('#signinboard').fadeOut(400);             
              $('#signoutboard').fadeIn(400);
                 Loaduserdata(cognitoUser.username);
@@ -1963,8 +1814,9 @@ function LoadallState(){
                                     
                                        ons.notification.alert("Check your internet Connection");
                                        return;
-                                   }  $('#signinspinner').f
-                                   else{ById("username-id")
+                                   } 
+                                   else{
+                                       
                                        ons.notification.alert("your error is  " + err.message);
                                        console.log(JSON.stringify(err,null,3));
                                        return;
@@ -2011,7 +1863,7 @@ function LoadallState(){
                                        $('#errormsg').fadeOut(200);
                                         resetdialog.hide();
                                         $('#signinspinnergetcode').fadeOut(400);
-                                       document.querySelector('#myNavigator').pushPage('signin.html');       
+                                       navigator.pushPage('signin.html');       
                                     }   
                                     else {
                                         document.getElementById("errormsg").innerHTML = "Passwords don't match";
@@ -2070,7 +1922,7 @@ function LoadallState(){
                                                $('#errormsg').fadeOut(200);
                                                $('#signinspinnergetcode').fadeOut(400);
                                                 resetdialog.hide();
-                                                document.querySelector('#myNavigator').pushPage('signin.html');      
+                                                navigator.pushPage('signin.html');      
                                             }   
                                             else {
                                                 document.getElementById("errormsg").innerHTML = "Passwords don't match";
@@ -2181,7 +2033,7 @@ function LoadallState(){
                                 document.getElementById('freewall').innerHTML = "";
                                 
                                 data_skip_yearbook = 0; 
-                                document.querySelector('#myNavigator').popPage();
+                                navigator.popPage();
                             }else{
                                 data_skip_yearbook = data.skip_num_yearbook + 20;
                                 
@@ -2268,7 +2120,7 @@ function LoadallState(){
                  $(".btn-viewwall").on("click",function(e){
                     
                                         data_skip_cmwall = 0;
-                                        document.querySelector('#myNavigator').pushPage('corperwall.html');  
+                                        navigator.pushPage('corperwall.html');  
                                        
                                         cmstd_wall = e.target.id;
                                          
@@ -2456,9 +2308,14 @@ function LoadallState(){
              
             
                 cognitoUser.signOut();
-                console.log("login out");
+
                
-                document.getElementById("username-id").innerHTML = "";
+              //  document.getElementById("username-id").innerHTML = "";
+              $(".allpages-sign-in-notifier").fadeIn(400);
+              $("#container-id").hide();
+              $("#freewall").hide();
+              $("#profilepage-container").hide();
+              
                 $('#signoutboard').fadeOut(400);                                
 
              //   document.querySelector('#myNavigator').pushPage('signin.html');
@@ -2471,12 +2328,6 @@ function LoadallState(){
 
 
 
-function notLoggedin-signin-btn(){
-                   
-                    document.querySelector("#myNavigator").pushPage("signin.html");
-                    
-                }
-         
 
 
 
