@@ -1424,7 +1424,7 @@ function LoadallState(){
                                   $('#First_Name').val(data.Cm[0].firstname)
                                   $('#Middle_Name').val(data.Cm[0].middlename)
                                   $('#Last_Name').val(data.Cm[0].lastname)                                    
-                                  document.getElementById('StateCode').innerHTML = username;
+                                 // document.getElementById('StateCode').innerHTML = username;
                                   $('#Email').val(data.Cm[0].email);
                                   $('#PhoneNo').val(data.Cm[0].phNumber );
                                   $('#CDSUnit').val(data.Cm[0].cdsunit);
