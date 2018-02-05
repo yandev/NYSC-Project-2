@@ -382,7 +382,7 @@ $('.page__content').on('scroll', scrollevent);
 
 
 
-                 $('.toast').hide();
+                 
 
                  var i = $(".profile_edit"); // Get all elements of with  class profile_edit
                  var i_num = 0; //iterator
@@ -594,7 +594,7 @@ $('.page__content').on('scroll', scrollevent);
 
 
              } else if (event.target.matches("#profilepage")) {
-
+                
                  //var mySwiper = document.querySelector('.swiper-container_profile').swiper
 
                  swiperprofilepage = new Swiper('.swiper-container_profile', {
